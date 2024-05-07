@@ -1,0 +1,45 @@
+@use 'src/app/styles/breakpoints';
+
+.layout {
+    background: var(--white);
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+
+        min-height: 100%;
+    }
+    &__content {
+        flex: 1 0 auto;
+    }
+    &__footer {
+        flex: 0 0 auto;
+    }
+    &__toggle-theme {
+        position: fixed;
+        bottom: 30px;
+        right: 40px;
+
+        width: 45px;
+        height: 45px;
+
+        border-radius: 50%;
+        box-shadow: 0 0 0 1px var(--border);
+        transition: 0.2s linear all;
+
+        z-index: 10;
+    }
+    &__icon {
+        top: 50%;
+        transform: translate(0, -50%);
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &__toggle-theme.light {
+        background-color: var(--primary-bg);
+    }
+    &__toggle-theme.dark {
+        background-color: var(--dark);
+    }
+}

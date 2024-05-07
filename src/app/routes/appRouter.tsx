@@ -10,8 +10,10 @@ import { Layout } from 'app/layout'
 import { Fallback } from 'shared/ui/fallback'
 import '../styles/index.scss'
 import clsx from 'clsx'
+import { useTheme } from 'entities/theme'
 
 export const AppRouter = () => {
+    const { theme } = useTheme()
     const routers = createRoutesFromElements(
         <Route
             path='/'
@@ -24,7 +26,7 @@ export const AppRouter = () => {
 
     const router = createHashRouter(routers)
     return (
-        <div className={clsx('app')}>
+        <div className={clsx('app', theme)}>
             <RouterProvider router={router} />
         </div>
     )

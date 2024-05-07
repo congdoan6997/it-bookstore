@@ -1,0 +1,26 @@
+@use 'src/app/styles/breakpoints';
+.header {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    &__wrapper {
+        display: grid;
+
+        width: 100%;
+        height: 54px;
+
+        align-items: center;
+        justify-content: space-between;
+
+        grid-template-columns: 20% 50% 20%;
+        grid-template-areas: 'title search buttons';
+    }
+
+    &__title {
+        grid-area: title;
+        max-width: max-content;
+        margin: 0;
+        font-weight: bold;
+        white-space: nowrap;
+        color: var(--primary-bg);
+    }
+}
